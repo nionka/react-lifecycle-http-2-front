@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+.container {
+  width: 100%;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid rgb(29, 28, 28);
+  margin-left: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loading{
+  display:inline-block;
+  position:relative;
+  vertical-align:middle;
+  width:  14px;
+  height: 14px;
+  border:1px solid transparent;
+  border-top-color: rgb(18, 202, 18);
+  border-bottom-color: rgb(18, 202, 18);
+  border-radius:50%;
+  
+}
+
+.loading:after,
+.loading:before{
+  position:absolute;
+  content: "";
+  width:0; height:0;
+  border:4px solid transparent;
+  border-bottom-color: rgb(18, 202, 18);
+}
+
+.loading:after{
+  top:1px;
+  right:-5px;
+  transform: rotate(135deg);
+}
+
+.loading:before{
+  top:5px;
+  left:-4px;
+  transform: rotate(-45deg);
+}
+
+@keyframes rotate{
+   to { transform: rotate(360deg); }
+}
+
+.btn:hover .loading {
+  animation: rotate 1s linear infinite;
+}
+
+.addCard {
+  margin-top: 20px;
+}
+
+.addCard h2 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.textarea-box {
+  padding: 10px;
+  border: 1px solid black;
+  width: 350px;
+}
+
+.textarea {
+  border: none;
+  resize: none;
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.add {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid rgb(78, 76, 76);
+  margin-left: auto;
+  position: relative;
+}
+
+.add::after {
+  position: absolute;
+  top: 8px;;
+  left: 7px;
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-right: 4px solid rgb(51, 49, 49);
+  border-bottom: 4px solid rgb(51, 49, 49);
+  transform: rotate(-45deg);
+}
+
+.cards {
+  min-height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.card {
+  width: 250px;
+  height: 200px;
+  margin-right: 25px;
+  margin-top: 20px;
+  padding: 0 15px 10px;
+  border: 1px solid gray;
+  background-color: rgba(46, 253, 5, 0.342);
+}
+
+.delete {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  background-color: white;
+  color: red;
+  margin-left: auto;
+  position: relative;
+  top: -15px;
+  left: 20px;
+  font-size: 18px;
 }
